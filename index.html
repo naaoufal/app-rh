@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	
+	<title>Application de RH</title>
+
+	
+	
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<a class="navbar-brand" href="index.html">LOGO</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="index.html">Accueil</a></li>
+					<li><a href="">Nos Departements</a></li>
+					<li><a href="">Nos Salariees</a></li>
+					<li><a href="contact.html">Contactez-nous</a></li>
+					<li><a class="btn" id="connexion">Connexion</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+	<div id="home">
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">Notre Site Parmi le meilleurs Site de recrutement</h1>
+				<h2>Ici tu trouve tous les informations de chaque entreprise</h2>
+			</div>
+		</div>
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thin">Pourquoi notre site est le meilleur site de recrutement</h2>
+		<p class="text-muted">
+			tu peux faire une petite tour dans notre site web 
+			pour cela tu connais les principes 
+		</p>
+	</div>
+	<!-- /Intro-->
+		
+	<!-- Highlights - jumbotron -->
+	<div class="jumbotron top-space">
+		<div class="container">
+			
+			<h3 class="text-center thin">tu peux choisi votre entreprise ou ajouter une nouvelle entreprise</h3><br>
+			
+			<center>
+				<div class="container" style="width:600px;" id="test">
+				  <div class="md-form">
+				  <input type="text" id="add" class="form-control" placeholder="Ajouter nouvelle entreprise">
+				  </div><br>
+				  <input type="button" onclick="addOption()" value="Ajouter" id="btn" class="form-control input-lg" style="width: 30%; text-align: center; background-color: #FF8C00; color: white;">
+				  <br>
+				  <select name="" id="entreprise" class="form-control input-lg">
+				   <option value="" id="opt1">Selectionner une entreprise</option>
+				  </select>
+				  <!-- <a class="btn btn-primary" href="#0" id="login_1">+</a> -->
+				  <br>
+				  <input type="text" class="form-control" placeholder="Ajouter nouvelle departement" id="depa">
+				  <br>
+				  <input type="button" onclick="addDepa()" value="Ajouter" id="btn1" class="form-control input-lg" style="width: 30%; text-align: center; background-color: #FF8C00; color: white;">
+				  <br>
+				  <select name="" id="departement" class="form-control input-lg">
+				   <option value="">Selectionner un departement</option>
+				  </select><br>
+					<!-- <a class="btn btn-primary" id="">Afficher</a><br> -->
+				 </div>
+			</center>
+		
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="text-center top-space">Plus d'informations sur l'entreprise</h2>
+		<br>
+
+		<div class="jumbotron top-space">
+			<h4>Ici on affiche les informations d'entreprise</h4>
+     		<p class="text-right"><a class="btn btn-primary btn-large">Plus »</a></p>
+  		</div>
+
+	</div>	<!-- /container -->
+
+	</div>
+	<!-- container -->
+	<div id="login">
+	<header id="head" class="secondary"></header>
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Accueil</a></li>
+			<li class="active">Accès utilisateur</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Se connecter</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Connectez-vous à votre compte</h3>
+							<p class="text-center text-muted">Pour créer un nouveau compte <a id="regi-1" style="cursor: pointer;">S'inscrire</a>  </p>
+							<hr>
+							
+							<form>
+								<div class="top-margin">
+									<label>Nom d'utilisateur / Email <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="top-margin">
+									<label>Mot de passe <span class="text-danger">*</span></label>
+									<input type="password" class="form-control">
+								</div>
+
+								<hr>
+
+								<div class="row">
+									<div class="col-lg-8">
+										<b><a href="">Mot de passe oublié ?</a></b>
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit">Connecter</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	</div>
+
+	<div id="register">
+	<header id="head" class="secondary"></header>
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Accueil</a></li>
+			<li class="active">Inscription</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Inscription</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Enregistrer un nouveau compte</h3>
+							<p class="text-center text-muted">Si déja inscris <a class="btn1" style="cursor: pointer;">Login</a></p>
+							<hr>
+
+							<form>
+								<div class="top-margin">
+									<label>Prénom</label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="top-margin">
+									<label>Nom</label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="top-margin">
+									<label>Adresse e-mail<span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>Mot de passe <span class="text-danger">*</span></label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="col-sm-6">
+										<label>Confirmer mot de passe<span class="text-danger">*</span></label>
+										<input type="text" class="form-control">
+									</div>
+								</div>
+
+								<hr>
+
+								<div class="row">
+									<div class="col-lg-8">
+										<label class="checkbox">
+											<input type="checkbox"> 
+											J'ai lu les <a href="page_terms.html">Termes et conditions</a>
+										</label>                        
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit">S'inscrire</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	</div>
+	
+	<!-- Social links. @TODO: replace by link/instructions in template -->
+	<section id="social">
+		<div class="container">
+			<div class="wrapper clearfix">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_button_linkedin_counter"></a>
+				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+				</div>
+				<!-- AddThis Button END -->
+			</div>
+		</div>
+	</section>
+	<!-- /social links -->
+
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>+212 60 0000000<br>
+								<a href="mailto:#">naoufelbenmensour@gmail.com</a><br>
+								<br>
+								YouCode, Safi, rue ...
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Suivez-moi</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Informations sur Application</h3>
+						<div class="widget-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+
+					<center>
+						<div class="widget-body">
+							<p>
+								Copyright &copy; 2020, Benmansour, Hassan, Soukaina 
+							</p>
+					</div>
+					</center>
+			</div>
+		</div>
+
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
