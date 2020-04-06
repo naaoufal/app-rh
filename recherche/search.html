@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>search</title>
+
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+
+  <!-- Canonical SEO -->
+  <link rel="canonical" href="https://www.creative-tim.com/product/fresh-bootstrap-table"/>
+
+  <!--  Social tags    -->
+  <meta name="keywords" content="creative tim, html table, html css table, web table, freebie, free bootstrap table, bootstrap, css3 table, bootstrap table, fresh bootstrap table, frontend, modern table, responsive bootstrap table, responsive bootstrap table">
+
+  <meta name="description" content="Probably the most beautiful and complex bootstrap table you've ever seen on the internet, this bootstrap table is one of the essential plugins you will need.">
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Fresh Bootstrap Table by Creative Tim">
+  <meta itemprop="description" content="Probably the most beautiful and complex bootstrap table you've ever seen on the internet, this bootstrap table is one of the essential plugins you will need.">
+
+  <meta itemprop="image" content="http://s3.amazonaws.com/creativetim_bucket/products/31/original/opt_fbt_thumbnail.jpg">
+  <!-- Twitter Card data -->
+
+  
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Fresh Bootstrap Table by Creative Tim" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://wenzhixin.github.io/fresh-bootstrap-table/compact-table.html" />
+  <meta property="og:image" content="http://s3.amazonaws.com/creativetim_bucket/products/31/original/opt_fbt_thumbnail.jpg"/>
+  <meta property="og:description" content="Probably the most beautiful and complex bootstrap table you've ever seen on the internet, this bootstrap table is one of the essential plugins you will need." />
+  <meta property="og:site_name" content="Creative Tim" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="asset/csss/fresh-bootstrap-table.css" rel="stylesheet" />
+  <link href="asset/csss/demo.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js"></script>
+
+ 
+<style type="text/css">
+  .bb{
+    width: 63%;
+  }
+  #result {
+    width: 70%;
+    margin-left: 22px;
+    margin-top: 40px;      
+  }
+  #liii{
+    margin: 5px 0;
+    border-radius: 10px;
+  }
+  #thclr{
+    color: aliceblue;
+  }
+  .row{
+    margin-right: 43px;
+    margin-left: -68px;
+    margin-top: 100px;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<a class="navbar-brand" href="index.html">LOGO</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="">Nos Departements</a></li>
+					<li class="active"><a href="">Nos Salariees</a></li>
+					<li><a href="contact.html">Contactez-nous</a></li>
+					<li><a class="btn" id="connexion">Connexion</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+    
+        <div class="fresh-table full-color-azure">
+       
+          <div class="container" >
+        <br /><br />
+        <div align="center" class="bb">
+            <input type="text" name="search" id="search" placeholder="Search *" class="form-control" />
+        </div>
+        <table class="list-group" id="result">
+          
+        </table>
+        <br />
+    </div>
+              
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer id="footer" class="top-space">
+
+  <div class="footer1">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-3 widget">
+          <h3 class="widget-title">Contact</h3>
+          <div class="widget-body">
+            <p>+212 60 0000000<br>
+              <a href="mailto:#">naoufelbenmensour@gmail.com</a><br>
+              <br>
+              YouCode, Safi, rue ...
+            </p>	
+          </div>
+        </div>
+
+        <div class="col-md-3 widget">
+          <h3 class="widget-title">Suivez-moi</h3>
+          <div class="widget-body">
+            <p class="follow-me-icons">
+              <a href=""><i class="fa fa-twitter fa-2"></i></a>
+              <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+              <a href=""><i class="fa fa-github fa-2"></i></a>
+              <a href=""><i class="fa fa-facebook fa-2"></i></a>
+            </p>	
+          </div>
+        </div>
+
+        <div class="col-md-6 widget">
+          <h3 class="widget-title">Informations sur Application</h3>
+          <div class="widget-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+            <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+          </div>
+        </div>
+
+      </div> <!-- /row of widgets -->
+    </div>
+  </div>
+
+  <div class="footer2">
+    <div class="container">
+
+        <center>
+          <div class="widget-body">
+            <p>
+              Copyright &copy; 2020, Benmansour, Hassan, Soukaina 
+            </p>
+        </div>
+        </center>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+</body>
+  <script>
+    $(document).ready(function () {
+        $('#search').keyup(function () {
+            $('#result').html('');
+            $('#state').val('');
+            var searchField = $('#search').val();
+            var expression = new RegExp(searchField, "i");
+            $.getJSON('data.json', function (data) {
+                $.each(data.companies, function (key, value) {
+                    if (value.nom.search(expression) != -1 || value.prenom.search(
+                            expression) != -1) {
+                        $('#result').append(
+                          '<thead><tr id="liii"><th id="thclr">Matricule</th><th id="thclr">Nom</th><th id="thclr">Prenom</th><th id="thclr">Age</th><th id="thclr">Salaire</th></tr></thead>',
+
+                            '<tbody><tr id="liii"><th> ' + value.matricule + ' </th><th>' + value.nom + ' </th><th>' + value.prenom + '</th><th>' + value.age + '</th><th>' + value.slr + '</th></tr></tbody>');
+                    }
+                });
+            });
+        });
+
+        $('#result').on('click', 'li', function () {
+            var click_text = $(this).text().split('|');
+            $('#search').val($.trim(click_text[0]));
+            $("#result").html('');
+        });
+    });
+</script>
+
+</html>
