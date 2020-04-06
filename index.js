@@ -56,10 +56,10 @@ app.use(sessions({
 //     res.sendFile('./public/content.html', {root : __dirname});
 // });
 
-// app.get('/sedeconnecter', function(req, res){
-//     req.session.destroy();
-//     res.redirect('/');
-// });
+app.get('/sedeconnecter', function(req, res){
+    req.session.destroy();
+    res.redirect('/');
+});
 
 // POST and redirected the files with request !!!
 // app.post('/connexion', function(req, res){
@@ -120,6 +120,26 @@ app.post('/entreprises',(req,res)=>{
     var response = JSON.stringify(data, null, 2);
     console.log(data);
     fs.writeFile('./public/entreprises.json', response, function(err){
+        console.log(err);
+    });
+    // some database call here
+    res.json({success : true});
+});
+app.post('/connexion',(req,res)=>{
+    var data = req.body;
+    var response = JSON.stringify(data, null, 2);
+    console.log(data);
+    fs.writeFile('./public/login.json', response, function(err){
+        console.log(err);
+    });
+    // some database call here
+    res.json({success : true});
+});
+app.post('/inscription',(req,res)=>{
+    var data = req.body;
+    var response = JSON.stringify(data, null, 2);
+    console.log(data);
+    fs.writeFile('./public/registre.json', response, function(err){
         console.log(err);
     });
     // some database call here

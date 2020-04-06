@@ -1,0 +1,22 @@
+[
+  {
+    "name": "firstname",
+    "value": "naoufal"
+  },
+  {
+    "name": "lastname",
+    "value": "benmansour"
+  },
+  {
+    "name": "email",
+    "value": "naoufelbenmensour@gmail.com"
+  },
+  {
+    "name": "password",
+    "value": "azer"
+  },
+  {
+    "name": "confirm_password",
+    "value": "azer"
+  }
+]

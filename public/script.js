@@ -9,6 +9,7 @@ $(document).ready(()=>{
     //       $("#entreprise").append("<option>"+ data +"</option>");
     //   }});
     // });
+    // // send the request in the express server and save it in regitre.json
     $('#form').submit((e)=>{
         e.preventDefault();
         $("#opt1").append("<option>"+ e.name +"</option>");
@@ -32,10 +33,37 @@ $(document).ready(()=>{
           data : JSON.stringify($('#form1').serializeArray()),
           success : (response)=>{
             console.log(response);
-
           }
         });
     });
+    // send the request in the express server and save it in login.json
+    $('#form_login').submit((e)=>{
+        e.preventDefault();
+        $.ajax({
+          url : '/connexion',
+          type : 'post',
+          contentType : 'application/json',
+          data : JSON.stringify($('#form_login').serializeArray()),
+          success : (response)=>{
+            console.log(response);
+          }
+        });
+    });
+    // send the request in the express server and save it in regitre.json
+    $('#form_registre').submit((e)=>{
+        e.preventDefault();
+        $.ajax({
+          url : '/inscription',
+          type : 'post',
+          contentType : 'application/json',
+          data : JSON.stringify($('#form_registre').serializeArray()),
+          success : (response)=>{
+            console.log(response);
+          }
+        });
+    });
+
+    // button requests
     $("#logout").click(function(){
         $.ajax({url : "/sedeconnecter",
         type : 'GET',
