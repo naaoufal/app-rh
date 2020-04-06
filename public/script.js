@@ -20,7 +20,7 @@ $(document).ready(()=>{
           data : JSON.stringify($('#form').serializeArray()),
           success : (response)=>{
             console.log(response);
-            $("#opt1").append("<option>"+ response.name +"</option>");
+            // $("#opt1").append("<option>"+ response.name +"</option>");
           }
         });
     });
@@ -32,13 +32,12 @@ $(document).ready(()=>{
           contentType : 'application/json',
           data : JSON.stringify($('#form1').serializeArray()),
           success : (response)=>{
-            console.log(response);
+              console.log(response);
           }
         });
     });
     // send the request in the express server and save it in login.json
-    $('#form_login').submit((e)=>{
-        e.preventDefault();
+    $('#form_login').submit(()=>{
         $.ajax({
           url : '/connexion',
           type : 'post',

@@ -3,7 +3,9 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
 var sessions = require('express-session');
-// var requestHandler = require('./requestHandler');
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+
 
 var session;
 var app = express();
@@ -95,8 +97,14 @@ app.get('/sedeconnecter', function(req, res){
 //     res.send(reply);
 // }
 
-
-
+// db.defaults({ entreprises: [], departement: [], count: 0 })
+//   .write()
+// db.get('entreprises')
+//   .push({ id: 1, name: 'the name of company'})
+//   .write()
+// db.get('departement')
+//   .push({ id: 2, name: 'the names of departements'})
+//   .write()
 
 // app.get('/entreprises', show_name);
 // function show_name(req, res){
@@ -106,44 +114,59 @@ app.get('/sedeconnecter', function(req, res){
 //     res.send(entreprise);
 // }
 app.post('/contact',(req,res)=>{
+    const adapter = new FileSync('contact_desc.json');
+    const db = low(adapter);
     var data = req.body;
-    var response = JSON.stringify(data, null, 2);
+    // var response = JSON.stringify(data, null, 2);
     console.log(data);
-    fs.writeFile('./public/contact_desc.json', response, function(err){
-        console.log(err);
-    });
+    // fs.writeFile('./public/contact_desc.json', response, function(err){
+    //     console.log(err);
+    // });
     // some database call here
-    res.json({success : true});
+    db.defaults({data_name : [] }).write();
+    db.get('data_name').push({ id: 1, value : data}).write();
+    // res.json({success : true});
 });
 app.post('/entreprises',(req,res)=>{
     var data = req.body;
-    var response = JSON.stringify(data, null, 2);
+    var response = JSON.stringify([data], null, 2);
     console.log(data);
     fs.writeFile('./public/entreprises.json', response, function(err){
         console.log(err);
+        res.send(response);
     });
     // some database call here
     res.json({success : true});
 });
 app.post('/connexion',(req,res)=>{
+    const adapter = new FileSync('login.json');
+    const db = low(adapter);
     var data = req.body;
-    var response = JSON.stringify(data, null, 2);
+    // var response = JSON.stringify(data, null, 2);
     console.log(data);
-    fs.writeFile('./public/login.json', response, function(err){
-        console.log(err);
-    });
+    // fs.writeFile('./public/login.json', response, function(err){
+    //     console.log(err);
+    // });
     // some database call here
-    res.json({success : true});
+    db.defaults({entreprises : [] }).write();
+    // Add a post
+    db.get('entreprises').push({ id: 1, value : data}).write();
+    // res.json({success : true});
 });
 app.post('/inscription',(req,res)=>{
+    const adapter = new FileSync('registre.json');
+    const db = low(adapter);
     var data = req.body;
-    var response = JSON.stringify(data, null, 2);
+    var data = req.body;
+    // var response = JSON.stringify(data, null, 2);
     console.log(data);
-    fs.writeFile('./public/registre.json', response, function(err){
-        console.log(err);
-    });
-    // some database call here
-    res.json({success : true});
+    db.defaults({ data_name: []}).write();
+    db.get('data_name').push({ id: 1, value : data}).write();
+    // fs.writeFile('./public/registre.json', response, function(err){
+    //     console.log(err);
+    // });
+    // // some database call here
+    // res.json({success : true});
 });
 
 
