@@ -1,0 +1,62 @@
+[
+    {
+     "id":"1",
+     "name":"Entreprise A",
+     "parent_id":"0"
+    }, 
+    {
+     "id":"2",
+     "name":"Entreprise B",
+     "parent_id":"0"
+    }, 
+    {
+     "id":"3",
+     "name":"Entreprise C",
+     "parent_id":"0"
+    }, 
+    {
+     "id":"4",
+     "name":"Departement Safi",
+     "parent_id":"1"
+    }, 
+    {
+     "id":"5",
+     "name":"Departement Eljadida",
+     "parent_id":"1"
+    }, 
+    {
+     "id":"6",
+     "name":"Departement Benguerir",
+     "parent_id":"1"
+    }, 
+    {
+     "id":"7",
+     "name":"Departement Casablanca",
+     "parent_id":"2"
+    }, 
+    {
+     "id":"8",
+     "name":"Departement Essaouira",
+     "parent_id":"2"
+    }, 
+    {
+     "id":"9",
+     "name":"Departement Tetouan",
+     "parent_id":"3"
+    }, 
+    {
+        "id":"9",
+        "name":"Departement Laayoune",
+        "parent_id":"2"
+    }, 
+    {
+     "id":"10",
+     "name":"Departement Tanger",
+     "parent_id":"3"
+    },
+    {
+        "id":"10",
+        "name":"Departement Houcaima",
+        "parent_id":"3"
+       }
+   ]
