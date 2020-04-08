@@ -20,9 +20,38 @@
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		#newEntr, #newlocal{
+			width: 40%;
+			margin: 20px;
+		}
+		.update-button, .delete-button{
+			padding: 12px 16px;
+			background-color: #FF8C00;
+			color: white;
+			border: #FF8C00;
+			border-radius: 5px;
+		}
+		.local, .name{
+			width: 100%;
+			border: 2px solid #FF8C00;
+			border-radius: 2px;
+			padding: 12px 22px;
+		}
+		select{
+			background-color: white;
+			width: 100%;
+			padding: 12px 22px;
+			border-radius: 2px;
+		}
+		th{
+			text-align: center;
+		}
+	</style>
+
 </head>
 
-<body class="home">
+<body>
 
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -30,14 +59,14 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html">LOGO</a>
+				<a class="navbar-brand" href="">LOGO</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="">Accueil</a></li>
 					<li  class="active"><a href="" id="depa">Nos Departements</a></li>
 					<li><a href="">Nos Salariees</a></li>
-					<li><a href="">Contactez-nous</a></li>
+					<li><a id="contatc_test" href="">Contactez-nous</a></li>
 					<li><a class="btn" id="logout">Se deconnecter</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -64,27 +93,52 @@
 			<h3 class="text-center thin">tu peux choisi votre entreprise ou ajouter une nouvelle entreprise</h3><br>
 			
 			<center>
-				<form action="/entreprises" method="POST" id="form1">
+				<!-- <form action="/entreprises" method="POST" id="form1">
 					<div class="" style="width:570px;">
 						<input type="text" placeholder="Ajouter une Entreprise" name="Entreprise" id="" class="form-control input-lg"><br>
 						<input type="text" placeholder="Ajouter une description" name="Description" id="" class="form-control input-lg"><br>
 						<input type="text" placeholder="Ajouter un departement" name="Departements" id="" class="form-control input-lg"><br>
 						<input class="btn btn-action" type="submit" value="Envoyer">
 					</div>
-				</form>
-				<div class="container" style="width:600px;" id="test">
+				</form> -->
+				<!-- <div class="container" style="width:600px;" id="test">
 				  <br>
 				  <select name="" id="entreprise" class="form-control input-lg">
 				   <option value="" id="opt1">Selectionner une entreprise</option>
 				  </select>
 				  <br>
 				  <!-- <a class="btn btn-primary" href="#0" id="login_1">+</a> -->
-				  <select name="" id="departement" class="form-control input-lg">
+				  <!-- <select name="" id="departement" class="form-control input-lg">
 				   <option value="">Selectionner un departement</option>
 				  </select><br>
 				  <button id="new" class="btn btn-action">Reprendre nouvelle ajout</button>
 					<!-- <a class="btn btn-primary" id="">Afficher</a><br> -->
-				 </div>
+				 <!-- </div>-->
+				 <br>
+				 <button class="btn btn-primary btn-large" id="getProducts">
+					Afficher notre Entreprises
+				  </button>
+				  <br>
+			  
+				  <form id="productForm">
+					<input class="form-control" placeholder="Entrer le nom d'entreprise" type="text" id="newEntr">
+					<input class="form-control" placeholder="Entrer le local d'entreprise" type="text" id="newlocal">
+					<br>
+					<button class="btn btn-primary btn-large" type="submit">Creer nouvelle entreprise</button>
+				  </form>
+				  <table class="table table-responsive">
+					<thead>
+					  <tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Local</th>
+						<th>Departements</th>
+						<th>Actions</th>
+					  </tr>
+					</thead>
+					<tbody></tbody>
+				  </table>
+			  
 			</center>
 		
 		</div>
@@ -192,6 +246,9 @@
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
 	<script src="script.js"></script>
-	<script src="server.js"></script>
+	<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 </body>
 </html>

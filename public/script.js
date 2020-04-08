@@ -1,18 +1,8 @@
 $(document).ready(()=>{
-    // $("#new").click(function(){
-    //   $.ajax({url: "/entreprises",
-    //   type : 'GET',
-    //   dataType : 'json',
-    //   success: function(result){
-    //       let result = {};
-    //       data = JSON.stringify(result.name);
-    //       $("#entreprise").append("<option>"+ data +"</option>");
-    //   }});
-    // });
-    // // send the request in the express server and save it in regitre.json
-    $('#form').submit((e)=>{
+
+//     // // send the request in the express server and save it in regitre.json
+    $('#form').on('click',(e)=>{
         e.preventDefault();
-        $("#opt1").append("<option>"+ e.name +"</option>");
         $.ajax({
           url : '/contact',
           type : 'post',
@@ -24,19 +14,7 @@ $(document).ready(()=>{
           }
         });
     });
-    $('#form1').submit((e)=>{
-        e.preventDefault();
-        $.ajax({
-          url : '/entreprises',
-          type : 'post',
-          contentType : 'application/json',
-          data : JSON.stringify($('#form1').serializeArray()),
-          success : (response)=>{
-              console.log(response);
-          }
-        });
-    });
-    // send the request in the express server and save it in login.json
+//     // send the request in the express server and save it in login.json
     $('#form_login').submit(()=>{
         $.ajax({
           url : '/connexion',
@@ -48,7 +26,7 @@ $(document).ready(()=>{
           }
         });
     });
-    // send the request in the express server and save it in regitre.json
+//     // send the request in the express server and save it in regitre.json
     $('#form_registre').submit((e)=>{
         e.preventDefault();
         $.ajax({
@@ -62,17 +40,17 @@ $(document).ready(()=>{
         });
     });
 
-    // button requests
+//     // button requests
     $("#logout").click(function(){
         $.ajax({url : "/sedeconnecter",
         type : 'GET',
         dataType : 'html',
         success : function(result){
-            window.location = '/';
+            window.location = '/accueil';
         }});
     });
     $("#connexion").click(function(){
-        $.ajax({url : "/",
+        $.ajax({url : "/accueil",
         type : 'GET',
         dataType : 'html',
         success : function(){
@@ -95,12 +73,21 @@ $(document).ready(()=>{
             window.location = '/connexion';
         }});
     });
+    $("#contact_test").click(function(){
+        $.ajax({
+        // url : "/entreprises",
+        type : 'GET',
+        dataType : 'html',
+        success : function(){
+            window.location = '/contact';
+        }});
+    });
     $("#shared_key").click(function(){
         $.ajax({url : "/inscription",
         type : 'GET',
         dataType : 'html',
         success : function(){
-            window.location = '/';
+            window.location = '/accueil';
         }});
     });
     $("#shared_key_1").click(function(){
@@ -108,23 +95,23 @@ $(document).ready(()=>{
         type : 'GET',
         dataType : 'html',
         success : function(){
-            window.location = '/';
+            window.location = '/accueil';
         }});
     });
-    $("#depa").click(function(){
-        $.ajax({url : "/contact",
-        type : 'GET',
-        dataType : 'html',
-        success : function(){
-            window.location = '/entreprises';
-        }});
-    });
+    // $("#depa").click(function(){
+    //     $.ajax({url : "/contact",
+    //     type : 'GET',
+    //     dataType : 'html',
+    //     success : function(){
+    //         window.location = '/entreprises';
+    //     }});
+    // });
     $("#shared_key_2").click(function(){
         $.ajax({url : "/connexion",
         type : 'GET',
         dataType : 'html',
         success : function(){
-            window.location = '/';
+            window.location = '/accueil';
         }});
     });
     $("#shared_key_3").click(function(){
@@ -178,4 +165,190 @@ $(document).ready(()=>{
         }});
         }
     });
+    const URI = '/api/entreprises';
+  
+    // GET PRODUCTS
+    $('#getProducts').on('click', () => {
+      $.ajax({
+        url: URI,
+        success: function (entreprises) {
+          let tbody = $('tbody');
+          tbody.html('');
+          entreprises.forEach(product => {
+            tbody.append(`
+                <tr>
+                  <td class="id">${product.id}</td>
+                  <td>
+                    <input type="text" class="name" value="${product.name}"/>
+                  </td>
+                  <td><input type="text" class="local" value="${product.local}"/></td>
+                  <td>
+                    <select>
+                        <option class="departements">Selectionne vorte departements</option>
+                        <option class="departements">${product.departements}</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="update-button">&#9851;</button>
+                    <button class="delete-button">&#10006;</button>
+                  </td>
+                </tr>
+            `)
+          })
+        }
+      });
+    });
+        // POST PRODUCTS
+        $('#productForm').on('submit', (e) => {
+          e.preventDefault();
+          let newEntr = $('#newEntr');
+          let newLocal = $('#newlocal');
+      
+          $.ajax({
+            url: URI,
+            method: 'POST',
+            data: {
+              name: newEntr.val(),
+              local : newLocal.val(),
+            },
+            success: function(response) {
+                newEntr.val('')
+                newLocal.val('')
+             $('#getProducts').click();
+            },
+            error: function (err) {
+              console.log(err);
+            }
+          });
+        });
+        
+        $('table').on('click', '.update-button', function() {
+          let row = $(this).closest('tr');
+          let id = row.find('.id').text();
+          let name = row.find('.name').val();
+          let local = row.find('.local').val();
+      
+          $.ajax({
+            url: `${URI}/${id}`,
+            method: 'PUT',
+            data: {
+              name: name,
+              local : local
+            },
+            success: function(response) {
+              console.log(response);
+              $('#getProducts').click();
+            }
+          });
+        });
+      
+        $('table').on('click', '.delete-button', function() {
+          let row = $(this).closest('tr');
+          let id = row.find('.id').text();
+      
+          $.ajax({
+            url: `${URI}/${id}`,
+            method: 'DELETE',
+            success: function (response) {
+             $('#getProducts').click();
+            }
+          });
+        });
 });
+
+// fonction d'affichage et ajouter
+
+// $(function () {
+
+//     const URI = '/api/entreprises';
+  
+//     // GET PRODUCTS
+//     $('#getProducts').on('click', () => {
+//       $.ajax({
+//         url: URI,
+//         success: function (entreprises) {
+//           let tbody = $('tbody');
+//           tbody.html('');
+//           entreprises.forEach(product => {
+//             tbody.append(`
+//                 <tr>
+//                   <td class="id">${product.id}</td>
+//                   <td>
+//                     <input type="text" class="name" value="${product.name}"/>
+//                   </td>
+//                   <td><input type="text" class="local" value="${product.local}"/></td>
+//                   <td>
+//                     <select>
+//                         <option class="departements">Selectionne vorte departements</option>
+//                         <option class="departements">${product.departements}</option>
+//                     </select>
+//                   </td>
+//                   <td>
+//                     <button class="update-button">&#9851;</button>
+//                     <button class="delete-button">&#10006;</button>
+//                   </td>
+//                 </tr>
+//             `)
+//           })
+//         }
+//       });
+//     });
+  
+//     // POST PRODUCTS
+//     $('#productForm').on('submit', (e) => {
+//       e.preventDefault();
+//       let newEntr = $('#newEntr');
+//       let newLocal = $('#newlocal');
+  
+//       $.ajax({
+//         url: URI,
+//         method: 'POST',
+//         data: {
+//           name: newEntr.val(),
+//           local : newLocal.val(),
+//         },
+//         success: function(response) {
+//             newEntr.val('')
+//             newLocal.val('')
+//          $('#getProducts').click();
+//         },
+//         error: function (err) {
+//           console.log(err);
+//         }
+//       });
+//     });
+    
+//     $('table').on('click', '.update-button', function() {
+//       let row = $(this).closest('tr');
+//       let id = row.find('.id').text();
+//       let name = row.find('.name').val();
+//       let local = row.find('.local').val();
+  
+//       $.ajax({
+//         url: `${URI}/${id}`,
+//         method: 'PUT',
+//         data: {
+//           name: name,
+//           local : local
+//         },
+//         success: function(response) {
+//           console.log(response);
+//           $('#getProducts').click();
+//         }
+//       });
+//     });
+  
+//     $('table').on('click', '.delete-button', function() {
+//       let row = $(this).closest('tr');
+//       let id = row.find('.id').text();
+  
+//       $.ajax({
+//         url: `${URI}/${id}`,
+//         method: 'DELETE',
+//         success: function (response) {
+//          $('#getProducts').click();
+//         }
+//       });
+//     });
+// });
+  

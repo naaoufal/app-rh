@@ -1,57 +1,10 @@
-{
-  "entreprises": [
-    {
-      "id": 1,
-      "value": [
-        {
-          "name": "username",
-          "value": "naoufal"
-        },
-        {
-          "name": "password",
-          "value": "azer"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "value": {
-        "username": "naoufal",
-        "password": "azer"
-      }
-    },
-    {
-      "id": 1,
-      "value": [
-        {
-          "name": "username",
-          "value": "Iron fist lee"
-        },
-        {
-          "name": "password",
-          "value": "aqwaqw"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "value": {
-        "username": "Iron fist lee",
-        "password": "aqwaqw"
-      }
-    },
-    {
-      "id": 1,
-      "value": [
-        {
-          "name": "username",
-          "value": "Aÿzn sama"
-        },
-        {
-          "name": "password",
-          "value": "aqwaqw"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "name": "username",
+    "value": "naoufal"
+  },
+  {
+    "name": "password",
+    "value": "azer"
+  }
+]
