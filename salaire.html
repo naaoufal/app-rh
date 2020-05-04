@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	
+	<title>Application de RH</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="home">
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html">LOGO</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="http://localhost:4000/accueil">Accueil</a></li>
+					<li><a href="http://localhost:4000/entreprises">Nos Departements</a></li>
+					<li><a href="http://localhost:4000/Salaire">Nos Salariees</a></li>
+					<li><a href="http://localhost:4000/contact">Contactez-nous</a></li>
+					<li><a class="btn" id="logout">Se deconnecter</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>/accueil
+	</div> 
+    <!-- /.navbar -->
+	<div id="home">
+        <!-- Header -->
+        <header id="head">
+            <div class="container">
+                <div class="row">
+                    <h1 class="lead">Notre Site Parmi le meilleurs Site de recrutement</h1>
+                    <h2>Ici tu trouve tous les informations de chaque entreprise</h2>
+                </div>
+            </div>
+        </header>
+        <!-- /Header -->
+    
+
+     <br>
+     <!--table-->
+     <table class="table table-bordered" action="javascript:void(0);" > 
+        <thead>
+          <tr>
+            <th >#id_department</th>
+            <th >#Matricule</th>
+            <th > Nom</th>
+            <th >Prenom</th>
+            <th >Age</th>
+            <th >salaire</th>
+          </tr>
+        </thead>
+     <tbody id="heroesBody">
+
+	 </tbody>
+      </table>
+ 
+<!--modal-->
+
+<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="addSalarie">ajouter un salaire</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ajouter salarié </h5>
+          <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+         </button>
+            </div>
+           <div class="modal-body">
+           <form  action="/salaire" method="POST">
+
+			   <!-- <div class="form-group">
+				<label for="recipient-name"  name ="Matricule" class="col-form-label"> Matricule:</label>
+				<input type="text" class="form-control" id="recipient-name">
+			  </div>  -->
+			 
+          <div class="form-group">
+            <label for="recipient-name"   class="col-form-label">   id_dep:</label>
+            <input type="text" name ="id_dep" class="form-control" id="recipient-name">
+          </div>
+         
+          <div class="form-group">
+            <label for="recipient-name"  class="col-form-label"> Nom:</label>
+            <input type="text" name="nom" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name"  class="col-form-label">  Prenom:</label>
+            <input type="text" name="Prenom" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name"  class="col-form-label"> Age:</label>
+            <input type="text" name="Age"  class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name"  class="col-form-label">salaire:</label>
+            <input type="text"  name="salaire" class="form-control" id="recipient-name">
+          </div>
+		  <div class="modal-footer">
+			<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+			<button type="submit" class="btn btn-primary">ajouter</button>
+		  </div>
+		  
+		</div>
+    </div>
+  </div>
+</div>
+          </form>
+
+      
+     
+<!--footer-->
+    <footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>+212 60 0000000<br>
+								<a href="mailto:#">naoufelbenmensour@gmail.com</a><br>
+								<br>
+								YouCode, Safi, rue ...
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Suivez-moi</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Informations sur Application</h3>
+						<div class="widget-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+
+					<center>
+						<div class="widget-body">
+							<p>
+								Copyright &copy; 2020, Benmansour, Hassan, Soukaina 
+							</p>
+					</div>
+					</center>
+			</div>
+		</div>
+
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
+	<script src="js/jquery-3.4.1.js"></script> 
+	 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="js/headroom.min.js"></script>
+	<script src="js/jQuery.headroom.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+	<script src="js/template.js"></script> 
+ <!-- <script src="server.js"></script>-->  
+ <script src="js/headroom.min.js"></script>
+ <script src="js/jQuery.headroom.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="script.js"></script>
+    <script>
+	$(function(){
+$.ajax({
+        method : 'GET',
+        url:'http://localhost:4000/userss',
+        dataType: 'json'
+    ,success:function(data){
+        console.log(data);
+		console.log('hello');
+		$.map(data, function(post ,i){
+            $('#heroesBody').append($("<tr>")
+                    .append($("<td>").append(post.id_dep))
+                    .append($("<td>").append(post.Matricule))
+                    .append($("<td>").append(post.nom))
+					.append($("<td>").append(post.Prenom))
+					.append($("<td>").append(post.Age))
+                    .append($("<td>").append(post.salaire)));
+
+		});
+	}
+    });
+$("#addSalarie").click(function(){
+$.ajax({
+	method:'GET',
+	url:'http://localhost:4000/departe',
+		dataType: 'json'
+		,success:function(list){
+        console.log(list);
+		console.log('hello2');
+// 		$.map(list, function(post ,i){
+//             $('.id_dep')
+//                     .append($("<option value="+post.id_dep+">").append(post.id_dep));
+// });
+		}
+});
+});
+
+});
+
+
+</script>
+
+</body>
+</html>
